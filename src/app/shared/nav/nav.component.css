@@ -1,0 +1,13 @@
+img {
+    width:45px;
+    height:45px;
+}
+
+.activo {
+    color: #EB6864 !important;
+    border-bottom: 1px solid #EB6864 ;
+}
+
+nav {
+    border-bottom: 1px solid #EB6864;
+}

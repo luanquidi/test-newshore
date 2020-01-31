@@ -1,0 +1,8 @@
+<div class="container my-4">
+    <app-title-page [title]="title"></app-title-page>
+  
+    <div *ngIf="!estado">
+      <app-error [mensaje]="mensaje"></app-error>
+    </div>
+    <app-house-list [houses]="houses"></app-house-list>
+  </div>

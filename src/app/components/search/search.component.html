@@ -1,0 +1,6 @@
+<form class="d-flex justify-content-center form-inline mb-4" #paramsForm="ngForm" (ngSubmit)="search()">
+    <input class="form-control mr-sm-2" type="text"(keyup)="search()" placeholder="Buscar por Nombre" name="params" #params="ngModel" [(ngModel)]="paramsText">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">
+        <i class="fa fa-search"></i>
+    </button>
+</form>

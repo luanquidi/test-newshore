@@ -1,0 +1,41 @@
+<div class="container my-4">
+    <div *ngIf="member" class="card shadow">
+      <div class="card-header">
+        <p class="text-center text-primary">{{ member.name }}</p>
+      </div>
+      <div class="card-body text-center">
+        <div>
+          <p><strong>Rol</strong></p>
+          <p *ngIf="member.role != undefined; else noHayRole">{{ member.role }}</p>
+          <ng-template #noHayRole>Sin rol</ng-template>
+          <hr />
+        </div>
+  
+        <div>
+          <p><strong>Casa</strong></p>
+          <p *ngIf="member.house != undefined; else noHayHouse">{{ member.house }}</p>
+          <ng-template #noHayHouse>Sin casa</ng-template>
+          <hr />
+        </div>
+  
+        <div>
+          <p><strong>Escuela</strong></p>
+          <p *ngIf="member.school != undefined; else noHaySchool">{{ member.school }}</p>
+          <ng-template #noHaySchool>Sin escuela</ng-template>
+          <hr />
+        </div>
+  
+        <div>
+          <p><strong>Estado de Sangre</strong></p>
+          <p *ngIf="member.bloodStatus != undefined; else noHayBlood">{{ member.bloodStatus }}</p>
+          <ng-template #noHayBlood>Sin tipo de Sangre</ng-template>
+          <img src="{{'./assets/images/blood-status/' + member.bloodStatus + '.jpg'}}" alt="" class="img-fluid img-thumbnail">
+          <hr />
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center m-4">
+      <button class="btn btn-success" (click)="goBack()">Volver</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,42 @@
+<div class="card shadow">
+    <div class="card-header">
+      <p class="text-center text-primary">{{ house.name }}</p>
+    </div>
+    <div class="card-body text-center">
+      
+      <div>
+        <p><strong>Mascota</strong></p>
+        <p>{{ house.mascot }}</p>
+        <hr>
+      </div>
+      
+      <div>
+        <p><strong>Jefe de Casa</strong></p>
+        <p>{{ house.headOfHouse }}</p>
+        <hr>
+      </div>
+      
+      <div>
+        <p><strong>Fantasma de la Casa</strong></p>
+        <p>{{ house.houseGhost }}</p>
+        <hr>
+      </div>
+
+      <div>
+        <p><strong>Fundador</strong></p>
+        <p>{{ house.founder }}</p>
+        <hr>
+      </div>
+      
+      <div>
+        <p><strong>Cantidad de Miembros</strong></p>
+        <span class="badge badge-pill badge-primary">{{house.members.length}}</span>
+      </div>
+    
+    </div>
+    <div class="card-footer p-2">
+      <a class="btn btn-outline-primary btn-block" 
+      [routerLink]="['/casas', house._id]">Ver Miembros</a>
+    </div>
+  </div>
+  

@@ -1,0 +1,15 @@
+<ul class="list-group mb-2">
+    <app-title-page [title]="title"></app-title-page>
+    <app-search (param)="searchByNamne($event)"></app-search>
+    <li class="list-group-item active text-center">
+        <span class="badge badge-pill badge-dark">{{members.length}}</span>
+    </li>
+    
+    <!-- <li *ngFor="let member of members" class="list-group-item d-flex justify-content-lg-between">
+        <p>{{member.name}}</p>
+        <a class="btn btn-outline-primary" routerLink="{{ '/casas/miembro/' + member._id }}"><i class="fas fa-eye"></i></a>
+    </li> -->
+    <div class="table table-responsive smart-table">
+        <ng2-smart-table [settings]="settings" [source]="members"  (custom)="viewMenber($event.data)" ></ng2-smart-table>
+    </div>
+</ul>
