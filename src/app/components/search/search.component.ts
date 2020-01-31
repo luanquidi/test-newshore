@@ -23,24 +23,9 @@ export class SearchComponent  {
     this.paramsText = '';
   }
 
+  //Método que permite comunicar al componente padre y pasarle los parametros para hacer el filtro
   search(){
     this.param.emit(this.paramsText)
-    // this._houseService.getMemberByName(this.paramsText).subscribe((response)=> {
-      
-    //   if(response[0] != undefined){
-    //     this._router.navigate(['/casas/miembro/' + response[0]._id]);
-    //     return;
-    //   }
-
-    //   Swal.fire({
-    //     icon: 'error',
-    //     title: 'Intenta nuevamente',
-    //     text: 'No se encontraron resultados!'
-    //   });
-
-    // }, (error) => {
-    //   console.log(error);
-    // })
   }
 
 }

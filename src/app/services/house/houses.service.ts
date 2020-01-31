@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+//Importacion de envioroment y model House
 import { environment } from 'src/environments/environment';
 import { House } from 'src/app/models/house';
 
@@ -46,11 +47,15 @@ export class HouseService {
         );
     }
 
+    //Método que permite obtener la informacion de un miembro, dado su id
     getMember(_id: string):Observable<any>{
-        return this._http.get(this.url + 'characters/'+ _id + '/?key=' + this.key );
+        const url = `${this.url}characters/${_id}/?key=${this.key}`;
+        return this._http.get(url);
     }
 
+    //Método que permite obtener la informacion de un miembro, por el nombre (name)
     getMemberByName(name: string):Observable<any>{
-        return this._http.get(this.url + 'characters?name='+ name + '&key=' + this.key );
+        const url = `${this.url}characters?${name}&key=${this.key}`;
+        return this._http.get(url);
     }
 }

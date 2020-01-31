@@ -20,16 +20,18 @@ export class MemberComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //Método que permite recoger el id que viene por parametro en la url
     this._route.params.subscribe((params: Params)=>{
+      //Método que permite obtener la informacion del miembro, de acuerdo a su identificador
       this._houseService.getMember(params._id).subscribe((response) => {
         this.member = response;
-        console.log(this.member)
       }, (error) => {
         console.log(error)
       });
     })
   }
 
+  //Método que permite hacer un back en el navegador
   goBack(){
     this._location.back();
   }

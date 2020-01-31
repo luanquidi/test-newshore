@@ -8,6 +8,7 @@ import { HouseService } from 'src/app/services/house/houses.service';
   styleUrls: ["./houses.component.css"]
 })
 export class HousesComponent implements OnInit {
+
   public title: string;
   public houses: House[];
   public estado: boolean;
@@ -19,6 +20,7 @@ export class HousesComponent implements OnInit {
   }
 
   ngOnInit() {
+    //Método que permite traer la informacion de las casas mediante el servicio de las casas
     this._houseService.getHouses().subscribe(
       response => {
         this.houses = response;
